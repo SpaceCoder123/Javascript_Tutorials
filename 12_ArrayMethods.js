@@ -38,7 +38,7 @@ console.log("---------       After deleting        --------------")
 console.log(arrayNum)
 
 array2 = [23,42,53,66,17,54]
-console.log("---------       After concatination        --------------")
+console.log("---------       After concatenation        --------------")
 let newArray = arrayNum.concat(array2)
 console.log(newArray)
 
