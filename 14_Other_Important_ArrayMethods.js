@@ -20,9 +20,7 @@ console.log(b)
 
 
 // what is the fundamental difference between MAP and FOR EACH
-// MAP function when performing, it creates a new array when the loop gets executed when it is performing some
-// operations on each array element
-
+// MAP function when performing, it creates a new array when the loop gets executed 
 // note: if you want to create a new array after the operation then use MAP, 
 // else you can use for each just for execution purposes
 
