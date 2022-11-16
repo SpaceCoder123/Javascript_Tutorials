@@ -1,0 +1,1 @@
+console.log("This program deals with script tag functionality in Javascript")
