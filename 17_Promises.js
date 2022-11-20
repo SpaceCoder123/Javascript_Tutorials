@@ -84,28 +84,58 @@
 // so the setTimeout of p4 inside p3 will be make the last .then wait which is declared for the completion of the code and then
 // the output of p4 is executed and therefore is called Promise Chaining
 
-const LoadScript = (src) =>{
-    return new Promise((resolve,reject) =>{
-        let script = document.createElement("script")
-        script.type = "text/javascript"
-        script.src = src
-        document.body.appendChild(script)
-        script.onload = () =>{
-            resolve("Script has been loaded in LoadscriptFunction")
-        }
-        script.onerror= () =>{
-            reject("There was some error in loading the script")
-        }
-    })
-}
+// const LoadScript = (src) =>{
+//     return new Promise((resolve,reject) =>{
+//         let script = document.createElement("script")
+//         script.type = "text/javascript"
+//         script.src = src
+//         document.body.appendChild(script)
+//         script.onload = () =>{
+//             resolve("Script has been loaded in LoadscriptFunction")
+//         }
+//         script.onerror= () =>{
+//             reject("There was some error in loading the script")
+//         }
+//     })
+// }
 
-let p1 = LoadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js")
-p1.then((value) => {
-    console.log("This has passed the first .then "+value)
-    return LoadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js")
-}).then((value)=>{
-    console.log("Second script ready "+value)
-}).catch((error)=>{
-    console.log("We are sorry, we are having problem loading the script -> "+error) 
-    // this will throw error no matter whether the first .then fails or second .then
+// let p1 = LoadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js")
+// p1.then((value) => {
+//     console.log("This has passed the first .then "+value)
+//     return LoadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js")
+// }).then((value)=>{
+//     console.log("Second script ready "+value)
+// }).catch((error)=>{
+//     console.log("We are sorry, we are having problem loading the script -> "+error) 
+//     // this will throw error no matter whether the first .then fails or second .then
+// })
+
+
+let p1 = new Promise((resolve,reject)=>{
+    ("The function is waiting")
+    setTimeout(()=>{
+        console.log("This program has finished running")
+    },3000)
+    resolve("the promise has finished running")
 })
+
+p1.then((value)=>{ // it will run this first 
+    console.log(value)
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+         resolve(4 + " from p1 which returns another promise")   
+        },1500)
+    }) 
+    // note if it is returning a promise then, the entire promise execution time will be taken and then the functions finished running 
+
+
+}).then((value)=>{
+    console.log(value) // this will run as it is  // this is resolved promise
+    // since this .then is linked with the above .then then it will run everytime p1 is called an successfully completed without any errors
+})
+
+p1.then(()=>{ // later this 
+    console.log("Congratulations the function has been resolved") // this is also resolved promise
+})
+
+// this is called attaching multiple handlers to a single promise
