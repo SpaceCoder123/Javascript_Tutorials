@@ -36,3 +36,5 @@ function hello(error, val){
 // the first but processed in the background and all the rest of the lines ran later
 
 LoadScript("https://cdn.jsdelivr.net/npm/aabootstrap@5.2.2/dist/js/bootstrap.bundle.min.js",hello)  // this is an improper url
+
+
