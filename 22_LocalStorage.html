@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <h3>This topic is about Local storage tutorial</h3>
+    <ul>
+        this is about local storage
+        <li>Local storage is web storage which are not sent to the server which each request</li>
+        <li>This data is stored in the same webpages even though you close the server, open it in new tab or even reload for the case, even reload as well</li>
+        <li>In order to visually see the local storage </li>
+        <li>Go to your default browser and right click -> Inspect element -> Application -> Local Storage -> Click on the local host link</li>
+        <li>You will open a table with key value pairs and therefore we can visualize the key value pairs which is stored and therefore done in Local Storage</li>
+    </ul>
+
+    <ul>
+        the major functions that are used in local storage are as follows
+        <li>
+            localStorage.setItem("key","value") -> for adding item into the local storage
+        </li>
+        <li>
+            localStorage.getItem('key') => for retrieving element from key 
+        </li>
+        <li>
+            localStorage.clear() => removes all items in the local storage 
+        </li>
+        <li>
+            localStorage.removeItem(key) => removes the particular argument associated with a key 
+        </li>
+        <li>
+            localStorage.key(index) => returns the value of the index , returns null if it is greater than the length of the local storage 
+        </li>
+        <li>
+            localStorage.length() => returns the total length of the local storage
+        </li>
+    </ul>
+
+    <h3>This is about Session Storage</h3>
+
+    <ul>
+        The important difference between local storage and session storage is sessionStorage data only survives till the ending of that particular session of work
+        <li>
+            The data cannot be retrieved when opened in a new tab
+        </li>
+        <li>
+            the data will remain intact even after refresh
+        </li>
+        <li>
+            the functions and properties are all the same with respect to LocalStorage
+        </li>
+    </ul>
+
+    <h3>
+        Storage Event
+    </h3>
+    <p> When the data in the localStorage or SessionStorage gets updated an event is triggered</p>
+    
+</body>
+<script src="23_SessionStorage.js"></script>
+</html>

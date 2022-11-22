@@ -33,6 +33,16 @@
     </ul>
 
     <p>The finally clause, is used for the program cleanup</p>
+
+    <p>Note fetch will return a promise </p>
+    <p>if the value is above 400 then the server is not responding</p>
+    <p> if it is 200 then it is running </p>
+    <p> Let us use to fetch data from public api</p>
+    <ul> Getting a response is a two stage process
+        <li>The first response delivers the status of the server</li> 
+        <li>Basically the first item is present to check whether connection is established</li>
+        <li>ok, returns a boolean and therefore returns true if the HTTP status code is 200-299, we need to call the body in different formats</li>
+    </ul>
 </body>
-<script src="20_Try_Catch.js"></script>
+<script src="21_FetchApi.js"></script>
 </html>
